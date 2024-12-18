@@ -67,7 +67,7 @@ if uploaded_file is not None:
         # 질문하기 버튼 클릭 시 동작
         if st.button('질문하기'):
             with st.spinner('Wait for it...'):  # 로딩 중 표시
-                llm = ChatOpenAI(model_name="gpt-4o", temperature=0)  # OpenAI GPT-3.5 모델 로드
+                llm = ChatOpenAI(model_name="gpt-4o", temperature=2)  # OpenAI GPT-3.5 모델 로드
                 qa_chain = RetrievalQA.from_chain_type(
                                 llm,
                                 retriever=chromadb.as_retriever(search_kwargs={"k": 3}),  # 검색에서 최대 3개의 문서 반환
